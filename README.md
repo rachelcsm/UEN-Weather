@@ -4,8 +4,9 @@ To run UEN Validation,
 npx create-react-app my-app
 2. cd my-app
 3. npm install @mui/material @emotion/react @emotion/styled
-4. npm start
-5. Enter an UEN number and press Validate. Web app will display if the UEN entered is valid or invalid
+4. Replace existing src folder with downloaded src folder
+5. npm start
+6. Enter an UEN number and press Validate. Web app will display if the UEN entered is valid or invalid
 
 To run validateUEN.js (console based codes):
 1. cd to file directory
