@@ -88,10 +88,10 @@ class UenForm extends Component {
             // (B) Local companies registered with ACRA
             // Check that first 4 digits are numbers
             if (!isNaN(uenArray[0]) && !isNaN(uenArray[1]) && !isNaN(uenArray[2]) && !isNaN(uenArray[3])) {
-                for (var j = 4; j < uenLen - 1; j++) {
-                    // Check that 5th to 9th digits are alphabets
-                    if (!uenArray[j].match(/[A-Z]/)) {
-                        console.log('This is not a valid UEN format issued to (B). There are non-alphabets in 5th to 9th digits.');
+                for (var i = 4; i < uenLen - 1; i++) {
+                    // Check that 5th to 9th digits are numbers
+                    if (isNaN(uenArray[i])) {
+                        console.log('This is not a valid UEN format issued to (B). There are non-numbers in 5th to 9th digits.');
                         return false;
                     }
                     else {
@@ -159,7 +159,7 @@ class UenForm extends Component {
                         value={this.state.UEN}
                         onChange={this.handleUserInput} />
                     <Button type="submit" variant="outlined" className='validateBtn'
-                    onClick={this.validate} validate>Validate</Button>
+                        onClick={this.validate} validate>Validate</Button>
                 </div>
 
                 <div className="panel panel-default">

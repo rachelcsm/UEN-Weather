@@ -55,9 +55,9 @@ function validateUEN(uen) {
         // Check that first 4 digits are numbers
         if (!isNaN(uenArray[0]) && !isNaN(uenArray[1]) && !isNaN(uenArray[2]) && !isNaN(uenArray[3])) {
             for (var i = 4; i < uenLen - 1; i++) {
-                // Check that 5th to 9th digits are alphabets
-                if (!uenArray[i].match(/[A-Z]/)) {
-                    console.log('This is not a valid UEN format issued to (B). There are non-alphabets in 5th to 9th digits.');
+                // Check that 5th to 9th digits are numbers
+                if (isNaN(uenArray[i])) {
+                    console.log('This is not a valid UEN format issued to (B). There are non-numbers in 5th to 9th digits.');
                     return false;
                 }
                 else {
